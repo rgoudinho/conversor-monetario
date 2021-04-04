@@ -1,9 +1,16 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: roh
+  Date: 04/04/2021
+  Time: 15:49
+  To change this template use File | Settings | File Templates.
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<t:template title="index">
+<t:template title="log-in">
     <jsp:body>
         </div>
         <div class="row">
@@ -27,13 +34,11 @@
                     <button class="btn waves-effect waves-light" type="submit" name="action">Entrar</button>
                 </div>
                 <div class="col s3"></div>
-                <div class="col s6">
-                    <div class="col s4"></div>
-                    <div class="col s8"><p>ou</p></div>
+                <div class="col s6 center">
                     <div class="col s12"> </div>
-                    <div class="col s2"></div>
+                    <div class="col s1"></div>
                     <div class="col s6">
-                        <a>Cadastre-se</a>
+                        <p>ou</p><a>Cadastre-se</a>
                     </div>
                 </div>
             </form>

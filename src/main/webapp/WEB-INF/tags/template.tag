@@ -31,16 +31,22 @@
 <header>
     <div class="navbar-fixed" style="z-index: 999">
         <nav>
-            <div class="nav-wrapper blue">
+            <div class="nav-wrapper grey darken-1">
                 <div class="container">
-                    <a class="brand-logo" href=""> <img class="utf-logo"
-                                                        src="assets/resources/images/logo.png"></img>
-                    </a> <a href="#" data-activates="mobile-demo" class="button-collapse"><i
+                    <a class="brand-logo" href="">
+                        <img class="utf-logo" src="assets/resources/images/logo-1.png"></img>
+                    </a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i
                         class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="">Início</a></li>
-                        <c:if test="${not empty username}">
-                            <li><a href="logout">Logout</a></li>
+                        <c:if test="${empty username}">
+                            <li><a href="cadastrar">Cadastre-se</a></li>
+                            <li><a href="log-in">Entrar</a></li>
+                        </c:if>
+                        <c:if test="${empty username}">
+                            <li><a href="conversor">Conversor</a></li>
+                            <li><a href="historico">Histórico</a></li>
+                            <li><a href="logout">Sair</a></li>
                         </c:if>
 
                     </ul>
@@ -49,14 +55,18 @@
                             <div class="col s8 offset-s2">
                                 <div class="center">
                                     <img class="responsive-img utf-logo-nav"
-                                         src="assets/resources/images/logo.png" />
+                                         src="assets/resources/images/logo-1.png" />
                                 </div>
                             </div>
                         </div>
-
-                        <li><a href="">Início</a></li>
+                        <c:if test="${empty username}">
+                            <li><a href="">Cadastre-se</a></li>
+                            <li><a href="">Entrar</a></li>
+                        </c:if>
                         <c:if test="${not empty username}">
-                            <li><a href="logout">Logout</a></li>
+                            <li><a href="">Conversor</a></li>
+                            <li><a href="">Histórico</a></li>
+                            <li><a href="logout">Sair</a></li>
                         </c:if>
                     </ul>
                 </div>
@@ -68,24 +78,25 @@
     <jsp:doBody></jsp:doBody>
 </main>
 <!-- rodape-->
-<footer class="page-footer blue darken-5">
+<footer class="page-footer grey darken-1 darken-5">
     <div class="container">
         <div class="row">
             <div class="col s12 center">
-                <a href="http://www.utfpr.edu.br/guarapuava">
-                    <img
-                        src="assets/resources/images/utfpr.png" id="utfpr-footer"
-                        class=" img-responsive" height="70px" />
-                </a>
+                Ⓒ Copyright 2021 - Conversor Monetário
+<%--                <a href="http://www.utfpr.edu.br/guarapuava">--%>
+<%--                    <img--%>
+<%--                        src="assets/resources/images/utfpr.png" id="utfpr-footer"--%>
+<%--                        class=" img-responsive" height="70px" />--%>
+<%--                </a>--%>
             </div>
         </div>
     </div>
-    <div class="footer-copyright">
-        <div class="container">
-            &#169; Copyright <span id="year"></span> - Todos os direitos
-            reservados
-        </div>
-    </div>
+<%--    <div class="footer-copyright">--%>
+<%--        <div class="container">--%>
+<%--            &#169; Copyright <span id="year"></span> - Todos os direitos--%>
+<%--            reservados--%>
+<%--        </div>--%>
+<%--    </div>--%>
 </footer>
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script src="assets/libraries/jquery.mask.min.js"></script>
