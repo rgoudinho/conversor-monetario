@@ -12,7 +12,22 @@
 
 <t:template title="historico">
     <jsp:body>
-
-
+        <h1 class="center">Histórico de conversões</h1>
+        <table class="striped">
+            <thead>
+            <tr>
+                <th>Valor</th>
+                <th>Da Moeda</th>
+                <th>Para</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
     </jsp:body>
 </t:template>

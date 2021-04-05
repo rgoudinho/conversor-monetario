@@ -37,7 +37,7 @@
                 </div>
                 <div class="col s4"></div>
                 <div>
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar</button>
+                    <button class="blue btn waves-effect waves-light" type="submit" name="action">Cadastrar</button>
                 </div>
             </form>
         </div>

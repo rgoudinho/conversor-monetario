@@ -5,7 +5,6 @@
 
 <t:template title="index">
     <jsp:body>
-        </div>
         <div class="row">
             <div class="col s3"></div>
             <form class="col s6" action="log-in" method="post">
@@ -24,7 +23,7 @@
                 </div>
                 <div class="col s4"></div>
                 <div class="s6">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Entrar</button>
+                    <button class="blue btn waves-effect waves-light" type="submit" name="action">Entrar</button>
                 </div>
                 <div class="col s3"></div>
                 <div class="col s6">

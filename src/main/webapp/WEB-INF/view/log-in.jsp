@@ -34,11 +34,13 @@
                     <button class="btn waves-effect waves-light" type="submit" name="action">Entrar</button>
                 </div>
                 <div class="col s3"></div>
-                <div class="col s6 center">
+                <div class="col s6">
+                    <div class="col s4"></div>
+                    <div class="col s8"><p>ou</p></div>
                     <div class="col s12"> </div>
-                    <div class="col s1"></div>
+                    <div class="col s2"></div>
                     <div class="col s6">
-                        <p>ou</p><a>Cadastre-se</a>
+                        <a>Cadastre-se</a>
                     </div>
                 </div>
             </form>
