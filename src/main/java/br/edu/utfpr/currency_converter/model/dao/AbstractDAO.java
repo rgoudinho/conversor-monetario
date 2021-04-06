@@ -1,6 +1,6 @@
 package br.edu.utfpr.currency_converter.model.dao;
 
-import br.edu.utfpr.hello_app.util.JPAUtil;
+import br.edu.utfpr.currency_converter.util.JPAUtil;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;

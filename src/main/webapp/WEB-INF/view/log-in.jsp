@@ -12,26 +12,25 @@
 
 <t:template title="log-in">
     <jsp:body>
-        </div>
         <div class="row">
             <div class="col s3"></div>
             <form class="col s6" action="log-in" method="post">
                 <div class="center"><h3>Log-in</h3></div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
+                        <input id="email" type="email" name="email" class="validate">
                         <label for="email">Email</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="password" type="password" class="validate">
+                        <input id="password" type="password" name="password" class="validate">
                         <label for="password">Password</label>
                     </div>
                 </div>
                 <div class="col s4"></div>
                 <div class="s6">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Entrar</button>
+                    <button class="blue btn waves-effect waves-light" type="submit" name="action">Entrar</button>
                 </div>
                 <div class="col s3"></div>
                 <div class="col s6">

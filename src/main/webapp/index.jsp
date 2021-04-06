@@ -11,13 +11,13 @@
                 <div class="center"><h3>Log-in</h3></div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
+                        <input id="email" type="email" name="email" class="validate">
                         <label for="email">Email</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="password" type="password" class="validate">
+                        <input id="password" type="password" name="password" class="validate">
                         <label for="password">Password</label>
                     </div>
                 </div>
