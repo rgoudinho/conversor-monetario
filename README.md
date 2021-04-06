@@ -11,14 +11,14 @@ Aplicação para fazer conversões monetarias
 - [ ] Cookies
     - [ ] Cookie que dura apenas uma sessão do navegador
     - [ ] Cookie com tempo de vida customizado além de uma sessão do navegador
-- [ ] Controle de erros e exceção via web.xml
-    - [ ] Tratamento por código de status ou exceção específica
-    - [ ] Tratamento de erros genérico
+- [X] Controle de erros e exceção via web.xml
+    - [X] Tratamento por código de status ou exceção específica
+    - [X] Tratamento de erros genérico
 - [ ] Expression Language (EL) para acessar os objetos de domínio (beans) da camada de modelo do MVC
 - [ ] JSTL e TagLib
     - [ ] forEach
-    - [ ] if
-    - [ ] Template com cabeçalho e rodapé
+    - [X] if
+    - [X] Template com cabeçalho e rodapé
 - [ ] JavaScript
     - [ ] Requisição AJAX
     - [ ] Armazenamento no LocalStorage
