@@ -28,7 +28,7 @@ public class RegisterServlet extends HttpServlet {
         if (email == "" || username == "" || password == "") {
             request.getRequestDispatcher("/WEB-INF/view/register.jsp").forward(request, response);
         } else {
-            User user = new User(email, username, password);
+            User user = new User(username, email, password);
             userService.save(user);
             request.setAttribute("email", email);
             request.getRequestDispatcher("/WEB-INF/view/log-in.jsp").forward(request, response);
