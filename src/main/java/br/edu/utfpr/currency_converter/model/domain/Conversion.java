@@ -16,13 +16,15 @@ public class Conversion {
     @NonNull
     private float value;
 
-    @NonNull
+    @ManyToOne
     @Column(name = "starting_currency")
-    private String startingCurrency;
-
     @NonNull
+    private Currency startingCurrency;
+
+    @ManyToOne
     @Column(name = "converted_currency")
-    private String convertedCurrency;
+    @NonNull
+    private Currency convertedCurrency;
 
     @ManyToOne
     @NonNull

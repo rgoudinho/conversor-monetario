@@ -17,7 +17,7 @@
             <form class="col s12">
                 <div class="row">
                     <div class="input-field col s3">
-                        <input id="input_value" type="text" data-length="10">
+                        <input id="input_value" type="text" name="value" data-length="10">
                         <label for="input_value">Valor</label>
                     </div>
                     <div class="input-field col s3">

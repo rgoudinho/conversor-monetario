@@ -9,11 +9,12 @@ public class ConversionDTO {
     private float value;
 
     @NonNull
-    private String startingCurrency;
+    private CurrencyDTO startingCurrency;
 
     @NonNull
-    private String convertedCurrency;
+    private CurrencyDTO convertedCurrency;
 
     @NonNull
     private UserDTO user;
+
 }

@@ -15,6 +15,12 @@ public class ConverterServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/view/converter.jsp").forward(request, response);
     }
 
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String value = request.getParameter("value");
+
+    }
+
     public void destroy() {
     }
 }

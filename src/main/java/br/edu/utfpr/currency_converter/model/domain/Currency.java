@@ -4,21 +4,20 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
-@Data(staticConstructor = "of")
+@Table(name = "currency")
+@Data
 @NoArgsConstructor
 @RequiredArgsConstructor(access = AccessLevel.PUBLIC)
-public class User {
+public class Currency{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NonNull
-    private String username;
+    @Column(name = "currency_name")
+    private String currencyName;
 
     @NonNull
-    private String email;
-
-    @NonNull
-    private String password;
+    @Column(name = "value_relative_real")
+    private double valueRelativeReal;
 }
