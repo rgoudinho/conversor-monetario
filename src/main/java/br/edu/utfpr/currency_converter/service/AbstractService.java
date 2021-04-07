@@ -32,14 +32,12 @@ public class AbstractService<PK, T> {
     }
 
     public T getByProperty(String propertyName, String propertyValue) {
-        T entity = null;
-        entity = dao.getByProperty(propertyName, propertyValue);
+        T entity = dao.getByProperty(propertyName, propertyValue);
         return entity;
     }
 
     public List<T> findAll() {
-        List<T> entities = null;
-        entities = dao.findAll();
+        List<T> entities = dao.findAll();
         return entities;
     }
 

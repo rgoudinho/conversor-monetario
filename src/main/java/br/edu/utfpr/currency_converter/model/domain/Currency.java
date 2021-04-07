@@ -19,5 +19,5 @@ public class Currency{
 
     @NonNull
     @Column(name = "value_relative_real")
-    private double valueRelativeReal;
+    private float valueRelativeReal;
 }

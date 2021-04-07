@@ -9,5 +9,5 @@ public class CurrencyDTO {
     private String currencyName;
 
     @NonNull
-    private double valueRelativeReal;
+    private float valueRelativeReal;
 }

@@ -17,12 +17,12 @@ public class Conversion {
     private float value;
 
     @ManyToOne
-    @Column(name = "starting_currency")
+    @JoinColumn(name = "starting_currency")
     @NonNull
     private Currency startingCurrency;
 
     @ManyToOne
-    @Column(name = "converted_currency")
+    @JoinColumn(name = "converted_currency")
     @NonNull
     private Currency convertedCurrency;
 

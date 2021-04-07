@@ -20,8 +20,8 @@ Aplicação para fazer conversões monetarias
     - [X] if
     - [X] Template com cabeçalho e rodapé
 - [ ] JavaScript
-    - [ ] Requisição AJAX
-    - [ ] Armazenamento no LocalStorage
+    - [X] Requisição AJAX
+    - [X] Armazenamento no LocalStorage
     - [ ] Uso de plugin JQuery
 - [ ] JPA
     - [ ] No mínimo 4 entidades, contabilizando as entidades User e Role, se houverem.

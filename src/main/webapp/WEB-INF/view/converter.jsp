@@ -14,33 +14,23 @@
     <jsp:body>
         <h1 class="center">Conversor monetário</h1>
         <div class="row">
-            <form class="col s12">
+            <form class="col s12" action="conversor" method="post">
                 <div class="row">
                     <div class="input-field col s3">
-                        <input id="input_value" type="text" name="value" data-length="10">
-                        <label for="input_value">Valor</label>
+                        <input id="input-value" type="text" name="value" data-length="10">
+                        <label for="input-value">Valor</label>
                     </div>
                     <div class="input-field col s3">
-                        <select class="browser-default">
-                            <option value="" >Da moeda:</option>
-                            <option value="1">Dolar (USD)</option>
-                            <option value="2">Real (BRL)</option>
-                            <option value="3">Euro (EUR)</option>
-                            <option value="4">Iene (JPY)</option>
-                            <option value="5">Libra Esterlina (GBP)</option>
+                        <select id="selected-starting-currency" name="selected-starting-currency" class="browser-default">
+                            <option value="" disabled selected>Da moeda:</option>
                         </select>
                     </div>
                     <div class="input-field col s1">
                         <button class="blue btn waves-effect waves-light" type="submit" name="action">⇄</button>
                     </div>
                     <div class="input-field col s3">
-                        <select class="browser-default">
-                            <option value="" >Para a moeda:</option>
-                            <option value="1">Dolar (USD)</option>
-                            <option value="2">Real (BRL)</option>
-                            <option value="3">Euro (EUR)</option>
-                            <option value="4">Iene (JPY)</option>
-                            <option value="5">Libra Esterlina (GBP)</option>
+                        <select id="selected-converted-currency" name="selected-converted-currency" class="browser-default">
+                            <option value="" disabled selected>Para a moeda:</option>
                         </select>
                     </div>
                     <div class="input-field col s2">
@@ -49,5 +39,49 @@
                 </div>
             </form>
         </div>
+        <div class="center">
+            ${original_value} = ${converted_value}
+        </div>
+        <script>
+            window.onload =  function (){
+                //ajax get para listar moedas
+                $.get('currency', function(data) {
+                    let $select = $('#selected-starting-currency');
+
+                    $.each(data, function(index, item) {
+                        $('<option>').val(index).text(item).appendTo($select);
+                    });
+                });
+
+                //evento de seleção de moeda no select
+                $('#selected-starting-currency').change(function (){
+                    //parâmetro a ser enviado
+                    let params = {
+                        startingCurrency: $(this).find(':selected').text()
+                    }
+                    //armazenamento no localstorage
+                    localStorage.setItem('currency', params.startingCurrency);
+                });
+
+                //ajax get para listar moedas
+                $.get('currency', function(data) {
+                    let $select = $('#selected-converted-currency');
+
+                    $.each(data, function(index, item) {
+                        $('<option>').val(index).text(item).appendTo($select);
+                    });
+                });
+
+                //evento de seleção de estado no select
+                $('#selected-converted-currency').change(function (){
+                    //parâmetro a ser enviado
+                    let params = {
+                        convertedCurrency: $(this).find(':selected').text()
+                    }
+                    //armazenamento no localstorage
+                    localStorage.setItem('currency', params.convertedCurrency);
+                });
+            }
+        </script>
     </jsp:body>
 </t:template>

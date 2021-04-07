@@ -1,5 +1,6 @@
 package br.edu.utfpr.currency_converter.controller;
 
+import br.edu.utfpr.currency_converter.model.dao.UserDAO;
 import br.edu.utfpr.currency_converter.model.domain.User;
 import br.edu.utfpr.currency_converter.service.UserService;
 
@@ -11,7 +12,8 @@ import javax.servlet.annotation.*;
 
 @WebServlet(name = "loginServlet", value = "/log-in")
 public class LoginServlet extends HttpServlet {
-    UserService userService = new UserService();
+    UserDAO userDAO = new UserDAO();
+    User user = new User();
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -23,23 +25,18 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         if (email == "" || password == ""){
+            System.out.println(">>>>>> ta vazio trouxa");
             request.getRequestDispatcher("/WEB-INF/view/log-in.jsp");
         } else {
-            if (isValid(email, password)) {
+            if (userDAO.exists(email, password)) {
+                System.out.println(">>>>>> FUNCIONOUUUU CARALHOOOO");
+                request.setAttribute("username", user);
                 request.getRequestDispatcher("/WEB-INF/view/converter.jsp").forward(request, response);
             } else {
+                System.out.println(">>>>>> algo muito errado aconteceu");
                 request.getRequestDispatcher("/WEB-INF/view/log-in.jsp").forward(request, response);
             }
         }
-    }
-
-    private boolean isValid(String email, String password) {
-        List<User> users = userService.findAll();
-        boolean result = false;
-        for (User user : users)
-            if (user.getEmail() == email & user.getPassword() == password)
-                result = true;
-        return result;
     }
 
     public void destroy() {
