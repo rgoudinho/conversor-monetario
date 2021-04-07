@@ -12,7 +12,6 @@ import java.io.IOException;
 
 @WebServlet(name = "registerServlet", value = "/cadastrar")
 public class RegisterServlet extends HttpServlet {
-    UserService userService = new UserService();
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -24,6 +23,7 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        UserService userService = new UserService();
 
         if (email == "" || username == "" || password == "") {
             request.getRequestDispatcher("/WEB-INF/view/register.jsp").forward(request, response);
@@ -31,7 +31,7 @@ public class RegisterServlet extends HttpServlet {
             User user = new User(username, email, password);
             userService.save(user);
             request.setAttribute("email", email);
-            request.getRequestDispatcher("/WEB-INF/view/log-in.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
         }
     }
 

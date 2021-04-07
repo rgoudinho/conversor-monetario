@@ -19,9 +19,6 @@ import java.io.PrintWriter;
 
 @WebServlet(name = "converterServlet", value = "/conversor")
 public class ConverterServlet extends HttpServlet {
-    UserDAO userDAO = new UserDAO();
-    ConversionService conversionService = new ConversionService();
-    CurrencyDAO currencyDAO = new CurrencyDAO();
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -30,6 +27,9 @@ public class ConverterServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        UserService userService = new UserService();
+        ConversionService conversionService = new ConversionService();
+        CurrencyService currencyService = new CurrencyService();
         String valueString = request.getParameter("value");
         String startingCurrencyString = request.getParameter("selected-starting-currency");
         String convertedCurrencyString = request.getParameter("selected-converted-currency");
@@ -37,11 +37,11 @@ public class ConverterServlet extends HttpServlet {
 
         Float value = Float.parseFloat(valueString);
         Long startingCurrencyLong = Long.parseLong(startingCurrencyString) + 1;
-        Currency startingCurrency = currencyDAO.getById(startingCurrencyLong);
+        Currency startingCurrency = currencyService.getById(startingCurrencyLong);
         Long convertedCurrencyLong = Long.parseLong(convertedCurrencyString) + 1;
-        Currency convertedCurrency = currencyDAO.getById(convertedCurrencyLong);
+        Currency convertedCurrency = currencyService.getById(convertedCurrencyLong);
         Long idUserLong = Long.parseLong(idUserString);
-        User user = userDAO.getById(idUserLong);
+        User user = userService.getById(idUserLong);
 
         if (valueString == "" || startingCurrencyString == convertedCurrencyString){
             request.getRequestDispatcher("/WEB-INF/view/converter.jsp").forward(request, response);

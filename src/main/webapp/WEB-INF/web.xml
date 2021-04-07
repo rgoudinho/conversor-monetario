@@ -7,7 +7,6 @@
     <error-page>
         <location>/WEB-INF/view/error/server-error.jsp</location>
     </error-page>
-
     <error-page>
         <error-code>404</error-code>
         <location>/WEB-INF/view/error/404.jsp</location>
