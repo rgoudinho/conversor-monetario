@@ -40,7 +40,6 @@ public class ConverterServlet extends HttpServlet {
         Currency startingCurrency = currencyDAO.getById(startingCurrencyLong);
         Long convertedCurrencyLong = Long.parseLong(convertedCurrencyString) + 1;
         Currency convertedCurrency = currencyDAO.getById(convertedCurrencyLong);
-        idUserString = "1";
         Long idUserLong = Long.parseLong(idUserString);
         User user = userDAO.getById(idUserLong);
 

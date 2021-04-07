@@ -22,11 +22,15 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            <c:if test="${not empty conversions}">
+                <tr>
+                    <c:forEach var="conversion" items="${conversions}">
+                        <td>${conversion.value}</td>
+                        <td>${conversion.startingCurrency}</td>
+                        <td>${conversion.convertedCurrency}</td>
+                    </c:forEach>
+                </tr>
+            </c:if>
             </tbody>
         </table>
     </jsp:body>

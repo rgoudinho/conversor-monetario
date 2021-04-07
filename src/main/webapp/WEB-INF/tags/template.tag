@@ -43,7 +43,7 @@
                             <li><a href="cadastrar">Cadastre-se</a></li>
                             <li><a href="log-in">Entrar</a></li>
                         </c:if>
-                        <c:if test="${empty username}">
+                        <c:if test="${not empty username}">
                             <li><a href="conversor">Conversor</a></li>
                             <li><a href="historico">Histórico</a></li>
                             <li><a href="sair">Sair</a></li>
