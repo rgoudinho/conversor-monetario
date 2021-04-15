@@ -20,9 +20,9 @@ Aplicação para fazer conversões monetarias
     - [X] if
     - [X] Template com cabeçalho e rodapé
 - [ ] JavaScript
-    - [X] Requisição AJAX
+    - [ ] Requisição AJAX
     - [X] Armazenamento no LocalStorage
     - [ ] Uso de plugin JQuery
 - [X] JPA
     - [X] No mínimo 4 entidades, contabilizando as entidades User e Role, se houverem.
-    - [X] Operações de CRUD.
+    - [ ] Operações de CRUD.
